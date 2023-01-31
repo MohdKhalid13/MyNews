@@ -1,0 +1,302 @@
+import React, { Component } from 'react'
+import NewsItems from './NewsItems';
+
+class News extends Component{
+
+    articles = [
+
+            {
+               "source":{
+                  "id":null,
+                  "name":"Rolling Stone"
+               },
+               "author":"Marlow Stern",
+               "title":"2023 Oscar Nominees’ Five Biggest Snubs, From Tom Cruise to Women Directors - Rolling Stone",
+               "description":"Nominations for the 95th Academy Awards, airing March 12, brought some nice surprises, but also plenty of snubs. These are the most egregious",
+               "url":"https://www.rollingstone.com/tv-movies/tv-movie-features/oscar-nominees-2023-five-biggest-snubs-tom-cruise-women-directors-danielle-deadwyler-1234667240/",
+               "urlToImage":"https://www.rollingstone.com/wp-content/uploads/2023/01/download-34.jpeg?w=1200&h=800&crop=1",
+               "publishedAt":"2023-01-25T04:08:48Z",
+               "content":"In the all-too-early hours of Jan. 24, the nominations for the 95th annual Academy Awards were announced. Actors Riz Ahmed (Sound of Metal) and Allison Williams (Get Out) did the honors. Sadly, they … [+5574 chars]"
+            },
+            {
+               "source":{
+                  "id":"cnn",
+                  "name":"CNN"
+               },
+               "author":"Oliver Darcy",
+               "title":"Justin Bieber sells his music catalog - CNN",
+               "description":"Justin Bieber has sold the rights to his publishing and artist royalties from his song catalog, adding himself to a growing list of pop stars who have inked rights deals.",
+               "url":"https://www.cnn.com/2023/01/24/media/justin-bieber-music-catalog-sale/index.html",
+               "urlToImage":"https://media.cnn.com/api/v1/images/stellar/prod/230124132056-justin-bieber-file-2022.jpg?c=16x9&q=w_800,c_fill",
+               "publishedAt":"2023-01-25T03:18:00Z",
+               "content":"Justin Bieber has sold the rights to his publishing and artist royalties from his song catalog, adding himself to a growing list of pop stars who have inked rights deals.\r\nBieber sold his catalog to … [+1829 chars]"
+            },
+            {
+               "source":{
+                  "id":"cnn",
+                  "name":"CNN"
+               },
+               "author":"Natasha Bertrand, Oren Liebermann",
+               "title":"US finalizing plans to send approximately 30 Abrams tanks to Ukraine, two US officials say - CNN",
+               "description":"The US is finalizing plans to send approximately 30 Abrams tanks to Ukraine, two US officials familiar with the deliberations told CNN.",
+               "url":"https://www.cnn.com/2023/01/24/politics/us-abram-tanks-ukraine/index.html",
+               "urlToImage":"https://media.cnn.com/api/v1/images/stellar/prod/230124103610-file-m1-abrams-tank-2022.jpg?c=16x9&q=w_800,c_fill",
+               "publishedAt":"2023-01-25T03:10:00Z",
+               "content":"The US is finalizing plans to send approximately 30 Abrams tanks to Ukraine, two US officials familiar with the deliberations told CNN. \r\nThe Biden administration announcement to send the US-made tan… [+6888 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"The Guardian"
+               },
+               "author":"Tess McClure",
+               "title":"Selfies, sendoffs and star power as Jacinda Ardern has her last day in the sun - The Guardian",
+               "description":"New Zealand is still deciding what her political legacy will look like, but the crowds at her last engagement gave the sense of the end of an era",
+               "url":"https://www.theguardian.com/world/2023/jan/25/jacinda-ardern-last-day-new-zealand-prime-minister-selfies-sendoffs-star-power",
+               "urlToImage":"https://i.guim.co.uk/img/media/9ca133b8dc7bfd0262742f82bc0274d6f9f14d5e/0_197_5400_3240/master/5400.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=a98cb7b6684de9c1be0144925b44e1fe",
+               "publishedAt":"2023-01-25T03:02:00Z",
+               "content":"From the moment of her arrival, Jacinda Ardern is surrounded by a crush of people: hundreds gather to ask for final selfies, record video messages for friends and relatives, or simply watch her pass … [+6453 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"KCRA Sacramento"
+               },
+               "author":null,
+               "title":"Half Moon Bay Shootings: Workplace violence investigated as motive, Gov. Newsom speaks out about 'tragedy upon tragedy'' - KCRA Sacramento",
+               "description":"An agricultural worker killed seven people in back-to-back shootings at two mushroom farms that had employed him in Northern California and the massacre is believed to be a “workplace violence incident,\" officials said Tuesday as the state mourned its third m…",
+               "url":"https://www.kcra.com/article/deadly-shootings-half-moon-bay-farms-employee-workplace-violence-investigated-as-motive/42639245",
+               "urlToImage":"https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/ap23021674613070.jpg?crop=1.00xw:0.850xh;0,0.150xh&resize=1200:*",
+               "publishedAt":"2023-01-25T02:18:00Z",
+               "content":"HALF MOON BAY, Calif. —An agricultural worker killed seven people in back-to-back shootings at two mushroom farms that had employed him in Northern California and the massacre is believed to be a wor… [+6748 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"NPR"
+               },
+               "author":"",
+               "title":"2 Memphis Fire Department employees are 'relieved of duty' after Tyre Nichols' death - NPR",
+               "description":"Nichols died on Jan. 10, three days after he was stopped by Memphis police for reckless driving. Five Memphis police officers have been fired following an investigation into Nichols' death.",
+               "url":"https://www.npr.org/2023/01/24/1151150396/tyre-nichols-memphis-fire-department-employees",
+               "urlToImage":"https://media.npr.org/assets/img/2023/01/24/ap23017762058468_wide-2ac34543065dafcf63984f7cc49aafa7e98466c1-s1400-c100.jpg",
+               "publishedAt":"2023-01-25T01:48:33Z",
+               "content":"A portrait of Tyre Nichols is displayed at a memorial service for him on Tuesday, Jan. 17, 2023 in Memphis, Tenn. Nichols was killed during a traffic stop with Memphis Police on Jan. 7.\r\nAdrian Sainz… [+4114 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"ESPN"
+               },
+               "author":"Bradford Doolittle",
+               "title":"Eight-time Gold Glove 3B Scott Rolen makes Baseball Hall of Fame - ESPN",
+               "description":"Longtime slick-fielding third baseman Scott Rolen has been elected to the Baseball Hall of Fame, getting 76.3% of the ballots cast in his sixth year of eligibility to earn enshrinement.",
+               "url":"https://www.espn.com/mlb/story/_/id/35519398/eight-gold-glove-3b-scott-rolen-makes-baseball-hall-fame",
+               "urlToImage":"https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2023%2F0123%2Fmlb_hof_announcement_rolen_cr_16x9.jpg",
+               "publishedAt":"2023-01-25T01:41:15Z",
+               "content":"Scott Rolen has been elected to the Baseball Hall of Fame, sneaking over the threshold by the narrowest of margins.\r\nRolen, one of the game's great third basemen, was named on 76.3% of ballots cast i… [+8722 chars]"
+            },
+            {
+               "source":{
+                  "id":"politico",
+                  "name":"Politico"
+               },
+               "author":null,
+               "title":"McCarthy names GOP members to run sweeping investigative panel - POLITICO",
+               "description":"As expected, Rep. Jim Jordan will run the subcommittee. It will also include a handful of the speaker's allies and two of his detractors.",
+               "url":"https://www.politico.com/news/2023/01/24/house-government-weaponization-subcommittee-members-00079341",
+               "urlToImage":"https://static.politico.com/20/40/6a3469664260902502d96e073ac8/congress-80218.jpg",
+               "publishedAt":"2023-01-25T01:29:07Z",
+               "content":"As part of the inner-conference haggling, conference heads also added language that gives the panel authority to get access to information shared with the Intelligence Committee and review ongoing cr… [+4567 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"Yahoo Entertainment"
+               },
+               "author":"Taryn Ryder",
+               "title":"Riley Keough shares last photo with mom Lisa Marie Presley: 'Grateful' - Yahoo Entertainment",
+               "description":"\"I feel blessed to have a photo of the last time I saw my beautiful mama,\" the 33-year-old actress shared on Tuesday.",
+               "url":"https://www.yahoo.com/entertainment/riley-keough-photo-mom-lisa-marie-presley-death-005919049.html",
+               "urlToImage":"https://s.yimg.com/ny/api/res/1.2/OVWUiXUsKuQ_t6MZBAMyRw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03OTk-/https://s.yimg.com/os/creatr-uploaded-images/2023-01/fda7e2d0-9c48-11ed-bad7-993ebfb4db77",
+               "publishedAt":"2023-01-25T00:59:00Z",
+               "content":"Lisa Marie Presley, Priscilla Presley and Riley Keough attend the Handprint Ceremony honoring three generations of Presley's on June 21, 2022 in Hollywood, California. (Photo: FilmMagic)\r\nRiley Keoug… [+2157 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"The Athletic"
+               },
+               "author":"Jay Morrison",
+               "title":"How the Bengals schemed Ja’Marr Chase to fluster the Bills - The Athletic",
+               "description":"The receiver is always a premium weapon, but where he showed up in formations created matchup issues for Buffalo.",
+               "url":"https://theathletic.com/4122347/2023/01/24/jamarr-chase-bengals-bills-zac-taylor/",
+               "urlToImage":"https://cdn.theathletic.com/app/uploads/2023/01/24183715/GettyImages-1458568635-1024x683.jpg",
+               "publishedAt":"2023-01-25T00:42:29Z",
+               "content":"CINCINNATI Standing at his locker last week, a few days removed from his teams 24-17 wild-card victory against the Ravens, Bengals wide receiver JaMarr Chase was lauding coach Zac Taylor for a game p… [+11221 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"NBCSports.com"
+               },
+               "author":null,
+               "title":"NFL Rumor: Aaron Rodgers is linked to the Colts - NBC Sports",
+               "description":"ESPN's Jeremy Fowler reported a rumor about Aaron Rodgers' link to the Colts for a potential offseason trade. How would this affect the Bears?",
+               "url":"https://www.nbcsports.com/chicago/bears/rumor-aaron-rodgers-linked-colts-how-would-it-affect-bears",
+               "urlToImage":"https://www.nbcsports.com/sites/rsnunited/files/styles/metatags_opengraph/public/article/hero/Aaron-Rodgers-USATSI19752252_0.jpg",
+               "publishedAt":"2023-01-25T00:35:13Z",
+               "content":"As Aaron Rodgers' future remains in question for the third consecutive offseason, one source relayed an interesting scenario to ESPN's Jeremy Fowler. \r\n\"One NFC executive brought up an interesting te… [+4291 chars]"
+            },
+            {
+               "source":{
+                  "id":"ars-technica",
+                  "name":"Ars Technica"
+               },
+               "author":"Beth Mole",
+               "title":"As egg prices soar, the deadliest bird flu outbreak in US history drags on - Ars Technica",
+               "description":"Risk to humans is low, but epidemiologists fear a future pandemic by such a flu.",
+               "url":"https://arstechnica.com/science/2023/01/as-egg-prices-soar-the-bloodiest-bird-flu-outbreak-in-us-history-drags-on/",
+               "urlToImage":"https://cdn.arstechnica.net/wp-content/uploads/2023/01/GettyImages-1237516676-760x380.jpeg",
+               "publishedAt":"2023-01-24T23:52:02Z",
+               "content":"Enlarge/ Chicken eggs are disposed of at a quarantined farm in Israel's northern Moshav (village) of Margaliot on January 3, 2022. \r\n29 with 0 posters participating\r\nThe ongoing bird flu outbreak in … [+4733 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"The Intercept"
+               },
+               "author":"Murtaza Hussain, Ryan Grim",
+               "title":"Elon Musk Removes BBC Doc at Request of India PM Modi - The Intercept",
+               "description":"Officials from India’s ruling right-wing party said American tech companies like Twitter and YouTube complied with demands to remove the documentary.",
+               "url":"https://theintercept.com/2023/01/24/twitter-elon-musk-modi-india-bbc/",
+               "urlToImage":"https://theintercept.imgix.net/wp-uploads/sites/1/2023/01/GettyImages-1246273459-modi-BBC-elon.jpg?auto=compress%2Cformat&q=90&fit=crop&w=1200&h=800",
+               "publishedAt":"2023-01-24T23:51:00Z",
+               "content":"Twitter and YouTube\r\n censored a report critical of Indian Prime Minister Narendra Modi in coordination with the government of India. Officials called for the Big Tech companies to take action agains… [+7160 chars]"
+            },
+            {
+               "source":{
+                  "id":"reuters",
+                  "name":"Reuters"
+               },
+               "author":null,
+               "title":"Volvo Cars recalls around 106900 cars worldwide - Reuters",
+               "description":"Sweden-based Volvo Cars <a href=\"https://www.reuters.com/companies/VOLCARb.ST\" target=\"_blank\">(VOLCARb.ST)</a> is recalling around 106,900 cars worldwide over a suspected fault related to the brakes, a Volvo Cars spokesperson said on Tuesday.",
+               "url":"https://www.reuters.com/business/autos-transportation/volvo-cars-recalls-around-106900-cars-worldwide-2023-01-24/",
+               "urlToImage":"https://www.reuters.com/resizer/C4vcZiDEj-dPiXcb8JBhqLVd5Gc=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5SBNT36JMBNF5DDW34JZJRXFWE.jpg",
+               "publishedAt":"2023-01-24T23:41:00Z",
+               "content":"STOCKHOLM, Jan 24 (Reuters) - Sweden-based Volvo Cars (VOLCARb.ST) is recalling around 106,900 cars worldwide over a suspected fault related to the brakes, a Volvo Cars spokesperson said on Tuesday.\r… [+241 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"KTRK-TV"
+               },
+               "author":null,
+               "title":"Houston weather: ABC13 viewers capture severe storm damage, flooding video and photos across southeast Texas - KTRK-TV",
+               "description":"An ABC13 Weather Alert Day was issued for what became a destructive storm pushing into southeast Texas.",
+               "url":"https://abc13.com/houston-weather-tornado-weather-houston-hourly-radar-abc13-alert-day/12731700/",
+               "urlToImage":"https://cdn.abcotvs.com/dip/images/12732107_012423-ktrk-wx-alert-day-banner-split-ugc-comp-img.jpg?w=1600",
+               "publishedAt":"2023-01-24T23:26:02Z",
+               "content":"HOUSTON, Texas (KTRK) -- Eyewitness News has been following the movement of a storm front that had the potential for street flooding and tornadic activity in southeast Texas on Tuesday afternoon.\r\nWh… [+1839 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"FOX 5 DC"
+               },
+               "author":"FOX 5 DC",
+               "title":"Watch RocketLab's Electron rocket launch from NASA's Wallops Flight Facility in Virginia - FOX 5 DC",
+               "description":"The first launch of an Electron rocket out of the USA will take place out of NASA's Wallops Island, Virginia facility around 6pm ET - and you can stream it here.",
+               "url":"https://www.fox5dc.com/news/watch-rocketlab-electron-rocket-hawkeye-nasa-wallops-flight-facility-virginia",
+               "urlToImage":"https://images.foxtv.com/static.fox5dc.com/www.fox5dc.com/content/uploads/2023/01/1280/720/Wallops-Island-OnAir-Clip.jpg?ve=1&tl=1",
+               "publishedAt":"2023-01-24T23:16:34Z",
+               "content":"The first launch of an Electron rocket out of the USA took place out of NASA's Wallops Island, Virginia facility at about 6pm ET on January 24th. The launch was originally scheduled for Monday night … [+455 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"East Idaho News"
+               },
+               "author":"Kalama Hines, EastIdahoNews.com",
+               "title":"Fundraiser launched to help mother of boy killed in dog attack in Fort Hall - East Idaho News",
+               "description":"POCATELLO — A fundraiser has been launched supporting a woman who lost her son and was sent to the emergency room following a brutal dog attack Saturday. The GoFundMe was launched Monday afternoon by a friend of Emily Islas, one of two victims of the attack b…",
+               "url":"https://www.eastidahonews.com/2023/01/fundraiser-launched-to-help-mother-of-boy-killed-in-dog-attack-in-fort-hall/",
+               "urlToImage":"https://s3-us-west-2.amazonaws.com/assets.eastidahonews.com/wp-content/uploads/2023/01/Islas.jpg",
+               "publishedAt":"2023-01-24T23:16:00Z",
+               "content":"POCATELLO — A fundraiser has been launched supporting a woman who lost her son and was sent to the emergency room following a brutal dog attack Saturday. \r\nThe GoFundMe was launched Monday afternoon … [+1667 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"NPR"
+               },
+               "author":null,
+               "title":"The U.K. government says more than 200 child asylum-seekers are missing - NPR",
+               "description":"A U.K. official said more than 200 children and teenagers under 18 were missing from government-approved accommodation. A newspaper reported dozens were abducted outside a hotel and bundled into cars.",
+               "url":"https://www.npr.org/2023/01/24/1151183405/uk-child-asylum-seekers-missing-abducted-hotels",
+               "urlToImage":"https://media.npr.org/assets/img/2023/01/24/ap23017354021609_wide-83e8feb96335f8e546cbfb5318ea3c88083bc6f1-s1400-c100.jpg",
+               "publishedAt":"2023-01-24T22:34:07Z",
+               "content":"Robert Jenrick, Britain's minister of state for immigration, arrives for a Cabinet meeting in Downing street in London on Tuesday.\r\nKirsty Wigglesworth/AP\r\nLONDON Opposition parties and children's ad… [+2759 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"Hollywood Reporter"
+               },
+               "author":"Katie Kilkenny",
+               "title":"Adult Swim Cuts Ties With Justin Roiland Following Domestic Abuse Charges - Hollywood Reporter",
+               "description":"'Rick and Morty' is set to continue, with Roiland's voice roles to be re-cast, sources say.",
+               "url":"https://www.hollywoodreporter.com/tv/tv-news/adult-swim-ends-relationship-justin-roiland-domestic-abuse-charges-1235308995/",
+               "urlToImage":"https://www.hollywoodreporter.com/wp-content/uploads/2023/01/GettyImages-1410132205-H-2023.jpg?w=1024",
+               "publishedAt":"2023-01-24T22:27:55Z",
+               "content":"Adult Swim has cut ties with Justin Roiland in the wake of the news that the Rick and Morty co-creator was charged with felony domestic abuse in Orange County.\r\n“Adult Swim has ended its association … [+2171 chars]"
+            },
+            {
+               "source":{
+                  "id":null,
+                  "name":"SciTechDaily"
+               },
+               "author":null,
+               "title":"HYPER (HighlY Interactive ParticlE Relics) – A New Model for Dark Matter - SciTechDaily",
+               "description":"Phase transition in early universe changes strength of interaction between dark and normal matter. Dark matter remains one of the greatest mysteries of modern physics. It is clear that it must exist, because without dark matter, for example, the motion of gal…",
+               "url":"https://scitechdaily.com/?p=245971",
+               "urlToImage":"https://scitechdaily.com/images/Astrophysics-Space-Dark-Matter-Concept.gif",
+               "publishedAt":"2023-01-24T22:14:01Z",
+               "content":"A team of researchers has now proposed a new candidate for dark matter: HYPER, or HighlY Interactive ParticlE Relics.\r\nPhase transition in early universe changes strength of interaction between dark … [+6098 chars]"
+            }
+         ]
+    
+
+    constructor(){
+        super();
+        console.log("Hello I am a constructor from new component");
+        this.state = {
+            articles: this.articles,
+            loading: false
+        }
+    }
+
+
+    render(){
+        return(
+            <>
+        <div className="container my-3">
+            <h2>My News</h2>
+            <div className="row">
+            {this.state.articles.map((element) => {
+                return <div className="col-md-4" key={element.url}>
+                <NewsItems title={element.title.slice(0,45)} description={element.description.slice(0,88)} imageUrl={element.urlToImage} newsUrl={element.url} />
+              </div>  
+            })}            
+            
+            </div>
+        </div>
+           
+            </>
+        )
+    }
+} 
+
+
+export default News;
